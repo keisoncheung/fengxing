@@ -1,0 +1,43 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Article2.aspx.cs" Inherits="manager_Article2"
+    ValidateRequest="false" %>
+
+<%@ Register Assembly="DotNetTextBox" Namespace="DotNetTextBox" TagPrefix="DNTB" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <!--#include file="daohang.aspx" -->
+    <form id="form1" runat="server">
+    <div style="width: 660px; margin: 0 auto;">
+        <fieldset style="width: 660px; font-size: 12px;">
+            <legend>类别</legend>
+            <div style="margin: 10px 0px 10px 20px;">
+            </div>
+        </fieldset>
+        <table style="width: 660px;" border="0" align="center">
+            <tr>
+                <td bgcolor="#507CD1" colspan="2">
+                    <font face="宋体" color="#ffffff">::::::::::::::::::::::::::::::::</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 283px" colspan="2">
+                    <div>
+                        <DNTB:WebEditor ID="WebEditor1" Skin="skin/xp/" systemFolder="system_dntb/" runat="server"
+                            AdjustSize="50" UploadFolder="../upfile/images/" Width="100%" LeftAreaAlign="center"
+                            Height="350px"></DNTB:WebEditor>
+                    </div>
+    &nbsp;</td> </tr>
+    <tr>
+        <td valign="bottom" align="center" colspan="2" style="height: 26px">
+            <input class="unnamed5" id="Submit2" type="submit" value=" 确 定 " name="submit" runat="server"
+                onserverclick="Submit2_ServerClick" />&nbsp;
+        </td>
+    </tr>
+    </table> </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class manager_Article2 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!this.IsPostBack)
+        {
+            csh();
+        }
+    }
+
+    public void csh()
+    {
+        if (Request["id"] != null)
+        {
+            try
+            {
+                string sql = "select content from Article where id=" + Request["id"] + "";
+                DataTable dt = osdData.DataSet(sql).Tables[0];
+                foreach (DataRow or in dt.Select())
+                {
+                    WebEditor1.Text = Convert.ToString(or["content"]);
+                }
+
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+        }
+    }
+
+    protected void Submit2_ServerClick(object sender, EventArgs e)
+    {
+        string sql = "update Article set content='" + WebEditor1.Text + "' where id=" + Request["id"] + "";
+        try
+        {
+            osdData.ExecuteNonQuery(sql);
+            Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"修改成功！\")</script>");
+        }
+        catch (Exception ee)
+        {
+            ee.ToString();
+            Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"修改失败！\")</script>");
+        }
+    }
+}
+

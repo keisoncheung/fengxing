@@ -1,0 +1,132 @@
+html
+{
+	scrollbar-face-color: #ffffff; /*设置或检索滚动条3D表面（ThreedFace）的颜色*/
+	scrollbar-highlight-color: #DEDEDE; /*设置或检索滚动条3D界面的亮边（ThreedHighlight）颜色*/
+	scrollbar-shadow-color: #D9D9D9; /*设置或检索滚动条3D界面的暗边（ThreedShadow）颜色*/
+	scrollbar-3dlight-color: #DEDEDE; /*设置或检索滚动条亮边框颜色*/
+	scrollbar-darkshadow-color: #F2F2F2; /*设置或检索滚动条暗边框（ThreedDarkShadow）颜色*/
+	scrollbar-arrow-color: #5E646B; /*设置或检索滚动条方向箭头的颜色*/
+	scrollbar-track-color: #f4f4f0; /*设置或检索滚动条的拖动区域(TrackBar)颜色*/
+}
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial,宋体,Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	overflow-x:hidden;	
+	scrollbar-face-color: #ffffff; /*设置或检索滚动条3D表面（ThreedFace）的颜色*/
+	scrollbar-highlight-color: #DEDEDE; /*设置或检索滚动条3D界面的亮边（ThreedHighlight）颜色*/
+	scrollbar-shadow-color: #D9D9D9; /*设置或检索滚动条3D界面的暗边（ThreedShadow）颜色*/
+	scrollbar-3dlight-color: #DEDEDE; /*设置或检索滚动条亮边框颜色*/
+	scrollbar-darkshadow-color: #F2F2F2; /*设置或检索滚动条暗边框（ThreedDarkShadow）颜色*/
+	scrollbar-arrow-color: #5E646B; /*设置或检索滚动条方向箭头的颜色*/
+	scrollbar-track-color: #f4f4f0; /*设置或检索滚动条的拖动区域(TrackBar)颜色*/
+}
+
+a:link
+{
+	color: #000000;
+	text-decoration: none;
+}
+a:visited
+{
+	color: #000000;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #cc0000;
+	text-decoration: none;
+	position: relative;
+	right: 0px;
+	top: 1px;
+}
+a:active
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+img
+{
+	border: 0px;
+}
+
+.red { color:#cc0000; }
+
+/*非IE浏览器居中*/
+.noie_center { margin-left:auto; margin-right:auto; padding-left: auto; padding-right: auto; }
+
+/******************** 隔行换色 ******************/
+
+#tab
+{
+	border-left: 1px #ECE9D8 solid;
+	border-right: 1px #ECE9D8 outset;
+	border-bottom: 1px #ECE9D8 outset;
+	width: 671px;
+}
+
+#tab tr td
+{
+	border-left: 1px #ECE9D8 solid;
+	border-bottom: 1px #ECE9D8 solid;
+}
+#tab img
+{
+	cursor: pointer;
+}
+#tab tr.top_tr
+{
+	background-color: #507CD1;
+	color: #fff;
+	font-weight: 600;
+}
+/* 第一行的背景色 */
+#tab tr.t1 td
+{
+	background-color: #EFF3FB;
+}
+/* 第二行的背景色 */
+#tab tr.t2 td
+{
+	background-color: #fff;
+}
+/* 鼠标经过时的背景色 */
+#tab tr.t3 td
+{
+	background-color: #D2DFF8;
+}
+
+
+.bigTitle { font-size: 20px; font-weight: 600; font-family:宋体,Arial,Helvetica, sans-serif; }
+
+a.ns:link
+{
+	color: #000000;
+	text-decoration: none;
+}
+a.ns:visited
+{
+	color: #000000;
+	text-decoration: none;
+}
+a.ns:hover
+{
+	color: #cc0000;
+	text-decoration: none;
+	position:static;
+}
+a.ns:active
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+.dp_show { display: block; }
+.dp_none { display: none; }
+
+.btn_white { padding: 0px; margin: 0px; background-color:#ffffff; height:25px;  width:44px; }

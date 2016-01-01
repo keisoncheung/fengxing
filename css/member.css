@@ -1,0 +1,35 @@
+/* CSS Document */
+@charset "utf-8";
+.el_toper{width: 100%;background: url(../images/hebg.jpg) no-repeat center top;height: 110px;overflow: hidden;}
+.dengluwrap{ width:860px; min-height:280px; overflow:hidden; margin:0px auto; float:none; padding:30px 0px;}
+.show {float: left;width: 466px;height:355px;}
+.operate {float: right;padding: 20px;width: 322px;border: 3px solid #f2f2f2;}
+.operate label {float: left;margin-bottom: 10px;color: #888;}
+.operate .tips {height: 25px;line-height: 25px;color: #df280a;}
+.operate .help {padding: 12px 0 13px;}
+.tips-wrap {position: relative}
+.mod_ipt {clear: both;padding: 10px 12px 6px;width: 294px;height: 14px;border: 1px solid #ddd;}
+.btn_blue {display: block;margin-bottom: 5px;width: 100%;height: 32px;background-color: #4498df;color:#ffffff;text-align: center;font-size: 16px;line-height: 32px;}
+.btn_blue:hover {
+background-color: #58a0de;
+text-decoration: none;color:#ffffff;
+}
+.login span {float: right;margin-top: 20px;color: #888;}
+.btn_green {display: inline-block;margin-left: 15px;width: 110px;height: 32px;background-color: #5eba6d;color: #fff;text-align: center;font-size: 16px;line-height: 32px;}
+.btn_green:hover {background-color: #6cbf79;text-decoration: none; color:#ffffff;}
+.btn_forget {display: inline-block;width: 92px;height: 20px;border: 1px solid #dbdbdb;background-color: #f4f4f4;color: #434343;vertical-align: middle;text-align: center;line-height: 20px;}
+
+.WB_loginButton {display: inline-block;}
+.WB_widgets {color: #646464;}
+.WB_widgets a:hover {text-decoration: underline;background-color: transparent;}
+.WB_widgets a, .WB_widgets .WB_linkA a, .WB_widgets .WB_linkA {color: #0078b6;}
+.WB_widgets a {text-decoration: none;}
+.operate label {float: left;margin-bottom: 10px;color: #888;font: 500 14px/1 microsoft yahei,hiragino sans gb,wenquanyi micro hei,sans-serif;}
+.mod_select {clear: both;margin-bottom: 40px;width: 314px;height: 32px;}
+.operate h3 {margin-bottom: 35px;color: #888;font-weight: 500;font-size: 18px;}
+.operate .rule {float: right;color: #c0c0c0;font: 500 14px/1 microsoft yahei,hiragino sans gb,wenquanyi micro hei,sans-serif;}
+.operate .agreement{float: right;color: #808080;}
+
+.al_agreement {border: 5px solid #f2f2f2;padding: 10px 25px 50px;margin-bottom: 50px;line-height: 28px;}
+.al_agreement h3 {font-size: 24px;font-weight: 500;padding: 15px 0;border-bottom: 1px solid #ccc;margin-bottom: 20px;}
+.al_mine .order_data_item {border: 1px solid #f0f0f0;margin-bottom: 30px;}

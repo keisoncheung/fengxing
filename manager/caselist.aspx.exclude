@@ -1,0 +1,156 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="caselist.aspx.cs" Inherits="manager_caselist" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>品牌专区</title>
+    <link href="admin_right2.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/prosearch.js" type="text/javascript"></script>
+
+    <script src="../js/jquery.js" type="text/javascript"></script>
+
+    <script src="../js/newslist.js" type="text/javascript"></script>
+
+    <script src="js/manager.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        #sle
+        {
+            width: 73px;
+        }
+        .style1
+        {
+            width: 201px;
+        }
+        #pro_user
+        {
+            width: 207px;
+        }
+        #Text1
+        {
+            width: 66px;
+        }
+        .style3
+        {
+            width: 35px;
+        }
+        .style4
+        {
+            width: 85px;
+        }
+        .style6
+        {
+            width: 100px;
+        }
+        .style7
+        {
+            width: 65px;
+        }
+    </style>
+</head>
+<body>
+<!--#include file="daohang.aspx" -->
+    <div style="margin-top: 10px; margin-bottom: 2px; width: 676px; text-align: left;">
+        <%--<div style="line-height: 150%;"><div style='display:inline;float:left; white-space: nowrap;'>商品类别：</div><%=txttype(1)%></div>
+<div style="line-height: 150%; clear:left"><div style='display:inline;float:left; white-space: nowrap;'>商家类别：</div><div><%=txttype(2)%></div>--%>
+<div style="line-height: 200%; clear: left">
+<div style='display: inline; white-space: nowrap;'>
+        <input type="button" onclick="window.location.href='caseshow.aspx'" value="添加数据" /></div>
+    <div style='display: inline; float: left; white-space: nowrap;'>
+        案例名称搜索：</div>
+    <div id="pro_search">
+        <input type="text" id="tinput" style="width: 188px" /><input type="button" value="搜索" style="margin-left: 10px;
+            width: 61px;" onclick="mana_search(1)" /></div>
+    <div style="clear: both; margin-top: 5px;">
+        当前位置：品牌专区--商品列表</div>
+</div>
+        <table id="tab" cellpadding="8" cellspacing="0">
+            <tr class="top_tr">
+                <td class="style3">
+                    选择
+                </td>
+                <td class="style3">
+                    序号
+                </td>
+                <td class="style4">
+                    图片
+                </td>
+                <td class="style1">
+                    所属案例名称
+                </td>
+                <td class="style6">
+                    时间
+                </td>
+                <td class="style7">
+                    操作
+                </td>
+            </tr>
+            <%
+                int j = 0;
+                if (Request["pg"] + "" != "")
+                {
+                    j = Convert.ToInt32(Request["pg"].ToString()) - 1;
+                }
+                int i = 0;
+                if (output["dt_list"] != null)
+                {
+                    System.Data.DataTable dt_list = (System.Data.DataTable)output["dt_list"];
+                    foreach (System.Data.DataRow dr_list in dt_list.Select())
+                    {
+                        i++;
+            %>
+            <tr>
+                <td>
+                    <input type="checkbox" id='cb<%=i %>' />
+                </td>
+                <td>
+                    <%=i+j*10 %><input type="text" id='newsid<%=i %>' class="dp_none" value='<%=dr_list[0] %>' />
+                </td>
+                <td>
+                    <img src='../pic/<%=dr_list[1].ToString() %>' style="width: 80px;" id='propic<%=i %>'
+                        onerror="this.src='../pic/nopic.jpg'" />
+                </td>
+                <td class="style1">
+                    <div id='txt0<%=i %>' style="width: 192px; overflow: hidden; text-align: center; white-space: nowrap;">
+                        <%=newstype(Convert.ToString(dr_list[2]),"pid") %></div>
+                </td>
+                <td style="text-align:center;">
+                    <%=DateTime.Parse(dr_list[3].ToString()).ToString("yyyy-MM-dd") %>
+                </td>
+                <td>
+                    <div id='btn0<%=i %>' class="dp_show">
+                        <a href='./caseshow.aspx?<%=newspage() %>id=<%=dr_list[0] %>&tid=<%=dr_list[0] %>'
+                            class="ns">【查看】</a>
+                        <br />
+                        <br />
+                        <span id='<%=i %>' style="cursor: pointer;" onmouseover="cd(this.id)" onmouseout="cd2(this.id)"
+                            onclick='return(confirm("你确定要删除吗？"))?delnews(<%=i %>):false;'>【删除】</span></div>
+                    <div id='btn00<%=i %>' class="dp_none">
+                        <img src="../images/ajax1.gif" /></div>
+                </td>
+            </tr>
+            <%     }
+                }%>
+        </table>
+
+        <div style='padding: 10px 0px 50px 0px; width: 680px; text-align: right; <%=(Page_Text != "")?"": "" %>'>
+            <table border='0' cellspacing='0' cellpadding='0'>
+                <tr style='vertical-align: bottom;'>
+                    <td width='280' align='left' valign="bottom">
+                        <input type="button" value="全选" id="btn_choose" class="btn_white" onclick="checkboxall()" />&nbsp;&nbsp;
+                        <input type="button" value="删除" class="btn_white" onclick="return(confirm('你确定要删除吗？'))?delnewsall(<%=i %>):false;" />&nbsp;&nbsp;<%--<input type="button" value="批量更新" id="Button1" class="btn_white" style="width:80px;" onclick='edit_businum(<%=i %>,"","pp");' />--%>
+                    </td>
+                    <%=Page_Text %>
+                    <td valign="bottom">
+                        转到&nbsp;<input id="gopg" type="text" style="width: 20px; height: 15px; padding: 0px;"
+                            onkeypress="gopgEnter()" />&nbsp;页
+                    </td>
+                    <td valign="bottom">
+                        &nbsp;&nbsp;&nbsp;<input id="gobtn" value="Go" type="button" class="btn_white" onclick="btn_gopg()" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+</body>
+</html>

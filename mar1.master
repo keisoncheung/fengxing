@@ -1,0 +1,244 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mar1.master.cs" Inherits="mar1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <title>风行旅游</title>
+    <meta name="keywords" content="风行旅游">
+    <meta name="description" content="风行旅游">
+    <meta property="qc:admins" content="27156067766153727506375636" />
+    <link type="text/css" rel="stylesheet" href="css/global.css" />
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div>
+        <div class="toper">
+            <div class="top">
+                <div class="top1">
+                    <div class="top1left">
+                        专注澳大利亚、新西兰自由行，您的澳新旅游专家！</div>
+                    <%--  <div style=" width:200px; float:left; overflow:hidden;"><%=login_later%></div>--%>
+                    <%
+                        string denglu_CSS = "style='width:245px;'";
+                        MemberInfo info = new MemberInfo();
+                        info.Load();
+                        if (info.mId == "0")
+                        {
+                            login_prev = @"<td><a href='login.aspx'>登录</a> |</td>
+                <td> <a href='registration.aspx'>注册</a> |</td>";
+                            login_later = string.Empty;
+                        }
+                        else
+                        {
+                            denglu_CSS = "style='width:345px;'";
+                            string sql = "select top 1 Name1 from MemberList where Id=" + info.mId; ;
+                            login_prev = @" <td> <a href='myinfo.aspx'><font style='color:red;'>" + Convert.ToString(DLL.OleDbHelper.ExecuteScalar(DLL.OleDbHelper.Conn, sql, null)) + @"</font></a>&nbsp;&nbsp; <a href='memberout.aspx'>退出</a></td>";
+                        }
+                    %>
+                    <div class="top1right" <%=denglu_CSS %>>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <%=login_prev %>
+                                <td>
+                                    <a href="myorder2.aspx">我的订单</a>&nbsp;&nbsp;
+                                </td>
+                                <td width="18">
+                                    <img src="images/gw.png" width="16" height="16" />
+                                </td>
+                                <td>
+                                    <a href="cart.aspx" class="top_gw">购物车</a>
+                                </td>
+                                <td width="15">
+                                    <img src="images/bz.png" width="13" height="13" />
+                                </td>
+                                <td>
+                                    <a href="about.aspx?id=41" class="top_bz">帮助</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="top2">
+                    <div class="top2_logo">
+                        <a href="index.aspx">
+                            <img src="images/logo.png" height="108" /></a></div>
+                    <div class="top2_ss">
+                        <div class="top2_ss_1">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td valign="middle" width="374" height="40">
+                                        <input class="top2_ss_1_t" runat="server" id="tbx_kw" type="text" value="">
+                                    </td>
+                                    <td valign="middle" width="69" height="40">
+                                        <input class="top2_ss_1_b" type="submit" onserverclick="Submit1_ServerClick" runat="server">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="top2_ss_2">
+                            热门搜索：<%= getKeyWord()%>
+                        </div>
+                    </div>
+                    <div class="top2_dh">
+                        <img src="images/dh.png" width="170" height="55" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <script>
+                $(document).ready(function () {
+                    $('.nav>li').mousemove(function () {
+                        $(this).addClass('on');
+                        $(this).find('dl').slideDown(); //you can give it a speed
+                    });
+                    $('.nav>li').mouseleave(function () {
+                        $(this).removeClass('on');
+                        $(this).find('dl').slideUp("fast");
+                    });
+
+                });
+            </script>
+            <div class="head">
+                <ul class="nav" id="nav">
+                    <li><a href="index.aspx">首页</a></li>
+                    <li><a href="aozhou.aspx?gj=0" target="_blank">澳大利亚</a></li>
+                    <li><a href="aozhou.aspx?gj=1" target="_blank">新西兰</a></li>
+                    <li><a href="sijiabooks.aspx" target="_blank">私家定制</a></li>
+                    <%--        	<li><a href="chakangengduo.aspx">私家定制</a></li>--%>
+                    <li><a href="tuanduily.aspx?gj=-1" target="_blank">团队旅游</a></li>
+                    <li><a href="qianzheng.aspx?gj=0" target="_blank">签证</a>
+                        <dl style="">
+                            <dd>
+                                <a href="qianzheng.aspx?gj=0" title="澳大利亚" target="_blank">澳大利亚</a></dd>
+                            <dd>
+                                <a href="qianzheng.aspx?gj=1" title="新西兰" target="_blank">新西兰</a></dd>
+                        </dl>
+                    </li>
+                    <li><a href="ziyouxing.aspx?gj=-1" target="_blank">自由行套餐</a></li>
+                    <li><a href="#">酒店</a></li>
+                    <li><a href="#">租车</a></li>
+                </ul>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="footer">
+            <div class="footbox">
+                <div class="footbox1">
+                    <div class="footbox1_1">
+                        <div class="footbox1_1_list" style="padding-left: 0px;">
+                            <div class="footbox1_1_list_top">
+                                <a href="about.aspx?id=44">关于我们</a></div>
+                            <ul class="footbox1_1_list_list">
+                                <li><a href="about.aspx?id=44">公司简介</a></li>
+                                <li><a href="about.aspx?id=45">联系我们</a></li>
+                                <li><a href="about.aspx?id=46">加入我们</a></li>
+                            </ul>
+                        </div>
+                        <div class="footbox1_1_list">
+                            <div class="footbox1_1_list_top">
+                                <a href="about.aspx?id=41">帮助指南</a></div>
+                            <ul class="footbox1_1_list_list">
+                                <li><a href="about.aspx?id=41">预定流程</a></li>
+                                <li><a href="about.aspx?id=43">常见问题</a></li>
+                                <li><a href="about.aspx?id=42">支付指南</a></li>
+                            </ul>
+                        </div>
+                        <div class="footbox1_1_list">
+                            <div class="footbox1_1_list_top">
+                                <a href="about.aspx?id=47">网站条款</a></div>
+                            <ul class="footbox1_1_list_list">
+                                <li><a href="about.aspx?id=47">用户协议</a></li>
+                                <li><a href="about.aspx?id=48">隐私保护</a></li>
+                                <li><a href="about.aspx?id=49">免责声明</a></li>
+                            </ul>
+                        </div>
+                        <div class="footbox1_1_list">
+                            <div class="footbox1_1_list_top">
+                                <a href="about.aspx?id=50">售后服务</a></div>
+                            <ul class="footbox1_1_list_list">
+                                <li><a href="about.aspx?id=50">投诉建议</a></li>
+                                <li><a href="about.aspx?id=51">退换货说明</a></li>
+                            </ul>
+                        </div>
+                        <div class="footbox1_1_list">
+                            <div class="footbox1_1_list_top">
+                                <a href="#">手机版</a></div>
+                        </div>
+                    </div>
+                    <div class="footbox1_2">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="50%">
+                                    <img src="images/w1.png" width="143" height="106" />
+                                </td>
+                                <td width="50%">
+                                    <img src="images/w2.png" width="146" height="106" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="footbox1_3">
+                        <img src="images/r.png" width="207" height="71" usemap="#Map" />
+                        <map name="Map">
+                            <area shape="rect" coords="76,37,111,73" href="http://weibo.com/aukgroup">
+                            <area shape="rect" coords="125,35,158,68" href="#2">
+                            <area shape="rect" coords="170,35,201,68" href="#3">
+                        </map>
+                    </div>
+                </div>
+                <div class="footbox2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="80">
+                                <strong style="font-size: 14px;">客户合作：&nbsp;</strong>
+                            </td>
+                            <%
+                                string pic_url2 = string.Empty;
+                                string sql3 = "select top 11 id,stitle,bpic,weburl from MainPic where parid=2 order by id desc;";
+                                System.Data.DataTable dt3 = DLL.OleDbHelper.ExecuteDataSet(DLL.OleDbHelper.Conn, sql3, null).Tables[0];
+                                foreach (System.Data.DataRow dr in dt3.Rows)
+                                {
+
+                                    //  pic_url2 = "style='background: url(pic/" + dr["bpic"] + " ) 50% 0 no-repeat;cursor:pointer;'  ";
+                            %>
+                            <td width="86">
+                                <a href="<%=dr["weburl"] %>" target="_blank">
+                                    <img src="pic/<%=dr["bpic"] %>" width="76" height="36" /></a>
+                            </td>
+                            <%
+}
+                            %>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footbox3">
+                    为全球华人倾力打造的全中文澳大利亚、新西兰自助旅游平台！您出行澳洲新西兰的旅游专家网站<br>
+                    体验澳新风情，尽在金澳风行!<br>
+                    Copyright（C）2006-2014 ALL Rights Reserved 广东风行国际旅行社有限公司版权所有 许可证号：00201 粤ICP备11082266号-1
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <link rel="stylesheet" type="text/css" href="qq/default_blue.css" />
+    <script language="javascript" src="qq/jquery.Sonline.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("body").Sonline({
+                Position: "right", //left或right
+                Top: 135, //顶部距离，默认200px
+                Effect: true, //滚动或者固定两种方式，布尔值：true或false
+                DefaultsOpen: false, //默认展开：true,默认收缩：false
+                Qqlist: "2355471080|Grace ,2355471074|Fay   ,2355471066|Nicole,2355471081|Eric  " //多个QQ用','隔开，QQ和客服名用'|'隔开
+            });
+        })	
+    </script>
+</body>
+</html>

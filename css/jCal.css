@@ -1,0 +1,174 @@
+/* default dimensions and justification for each month including title */
+.jCal {
+	/* each day width + border-left + border-right */
+	width:224px;
+	height:21px;
+	text-align:center;
+	vertical-align:top;
+}
+/* default dimensions and justification for each month not including title */
+.jCalMo {
+	width:224px;		/* each day width + border-left + border-right */
+	float:left;
+	overflow:visible;
+	height:100%;
+	padding-right:2px;
+	padding-left:2px;
+	white-space:nowrap;
+}
+/* top month display block - i.e. January */
+.jCal .month, .jCal .monthSelect, .jCal .monthName, .jCal .monthYear {
+	line-height:16px;
+	height:16px;
+	text-align:center;
+	vertical-align:bottom;
+	font-family:Tahoma;
+	font-size:8pt;
+	color:#000000;
+	cursor:pointer;
+	float:left;
+}
+/* month name per calendar style - includes left/right padding and alignment */
+.jCal .monthName {
+	padding-left:2px;
+	padding-right:2px; 
+	text-align:right;
+}
+/* year per calendar style - includes left/right padding and alignment */
+.jCal .monthYear {
+	float:right;
+	padding-left:2px;
+	padding-right:2px;
+	text-align:left;
+}
+/* hilight style for new month combobox pulldown for hover */
+.jCal .monthSelect {
+	background:#EEE url(../images/eeGrad2.gif) bottom repeat-x;
+}
+/* do not edit - this enables the new month combobox selector */
+.jCal .monthSelector {
+	position:absolute;
+}
+/* do not edit - this enables the new month combobox selector "shadow" for capturing auto-hide */
+.jCal .monthSelectorShadow {
+	position:absolute;
+	background:#808080;
+	padding:0px;
+}
+/* this is the hover for the month name */
+.jCal .monthNameHover {
+	background:#EDEDED url(../images/double-arrow-vert.gif) center left no-repeat;
+	color:#808080;
+}
+/* this is the hover for the year */
+.jCal .monthYearHover {
+	background:#EDEDED url(../images/double-arrow-vert.gif) center right no-repeat;
+	color:#808080;
+}
+/* this is the hover for the new month or year hover in the new combobox selection */
+.jCal .monthSelectHover {
+	background:#069;
+	color:#FFF;
+}
+/* day block dimensions and style - for all day blocks */
+.jCalMo .dow, .jCalMo .day, .jCalMo .pday, .jCalMo .aday, .jCalMo .overDay, .jCalMo .invday, .jCalMo .selectedDay {
+	width:30px;
+	font-family:Tahoma;
+	font-size:8pt;
+	color:#000000;
+	border-right:1px solid #CCC;
+	border-bottom:1px solid #CCC;
+	border-left:1px solid #EEE;
+	text-align:center;
+	cursor:default;
+	float:left;
+}
+/* day of week header specific style */
+.jCalMo .dow {
+	background:#EEE url(../images/eeGrad.gif) bottom repeat-x;
+	border-bottom:0px;
+}
+/* actual calendar day default style */
+.jCalMo .day, .jCalMo .invday {
+	height:30px;
+	text-align:center;
+}
+/* selectable calendar day specific style */
+.jCalMo .day {
+	cursor:pointer;
+	background:#FFF;
+}
+/* blacked-out calendar day specific style */
+.jCalMo .invday {
+	color:#808080;
+	background:#eeeeee;
+	text-decoration:line-through;
+}
+/* previous and subsequent months calendar day specific style */
+.jCalMo .pday, .jCalMo .aday {
+	height:30px;
+	background:#e3e3e3;
+	color:#CCC;
+}
+/* selected day */
+.jCalMo .selectedDay {
+	color:#FFF;
+	/* must use rgb() syntax for jquery.color.js compliance */
+	background:rgb(0, 143, 214);
+}
+/* mouseover hilighted selectable day */
+.jCalMo .overDay {
+	color:#FFF;
+	/* must use rgb() syntax for jquery.color.js compliance */
+	background:rgb(0, 102, 153);
+}
+/* left month navigation button - no need to change */
+.jCal .left {
+	background:url(../images/_left.gif) center center no-repeat;
+	width:16px;
+	height:16px;
+	vertical-align:middle;
+	cursor:pointer;
+	float:left;
+}
+/* right month navigation button - no need to change */
+.jCal .right {
+	background:url(../images/_right.gif) center center no-repeat;
+	width:16px;
+	height:16px;
+	vertical-align:middle;
+	cursor:pointer;
+	float:right;
+}
+/* no need to change - this is for carousel opacity */
+.jCalMask, .jCalMove {
+	position:absolute;
+	overflow:hidden;
+}
+
+.azboxshow3{ overflow:visible; height:278px;}
+.abbox_ddt_1{ float:left; height:28px; width:100%;}
+.abbox_ddt_11{ float:left; background:#5a9ced; width:116px; text-align:center; font-size:16px; color:#fff; line-height:28px; height:28px;}
+.abbox_ddt_12{position:relative; padding-left:11px; float:left; z-index:1000;}
+.ddt_shijiantc{ background:#E3E3E3;position: absolute; top:28px; left:10px; width:456px; display:none; z-index:1000;}
+.abbox_ddt_13{ float:right; color:#030303; font-size:14px; line-height:28px;}
+.abbox_ddt_13 a{ height:28px; position:relative; width: 80px; text-align:right;color:#030303; display:block;}
+.abbox_ddt_13 a .abox_ddt_131{ position:absolute; top:28px; right:0; width:322px; background:#ebf7fd url(images/bg_abox_ddt_131.jpg) left top no-repeat; padding-top:9px; display:none;}
+.abbox_ddt_13 a:hover .abox_ddt_131{ display:block;} 
+.abox_ddt_1311{ width:290px; border:1px solid #b4e1ff; border-top:none; padding:16px; line-height:24px; font-size:12px; color:333333; text-align:left;}
+.abbox_ddt_2{ float:left; width:100%; color:#333333; padding-top:17px;line-height:28px;}
+.ddt_xzdiyipai{ font-size:16px; line-height:30px;}
+.ddt_xzdiyipai span{ font-size:16px; padding-left:22px;}
+.ddt_xzlmp{ font-size:14px; color:#0e64cd; background:#cde9f7; }
+.dtdjjian{ float:left; border:1px solid #c9c9c9; width:22px; height:22px; text-align:center; line-height:22px; display:inline-block;}
+.dtdjzhong{float:left; border:1px solid #c9c9c9; width:26px; border-left:none;border-right:none;height:22px; text-align:center; line-height:22px;}
+.ddt_fzjg{ color:#0e64cd; font-size:14px;padding-left:6px;}
+.ddt_xzjg{ color:#ff6600; font-size:16px; padding-left:4px;}
+
+.abbox_ddt_3{ float:left; height:28px;width:100%; background:#cde9f7;}
+.abox_ddt_3jg{ padding-left:740px; width:210px; height:28px; line-height:28px; float:left; color:#ff0000; font-size:16px;}
+.abox_ddt_3gm{ font-size:12px; color:#333333; float:left; width:90px; height:28px; line-height:28px;}
+.abox_ddt_3gwc{ width:118px; height:28px; line-height:28px; text-align:center; font-size:18px; float:left;}
+.abox_ddt_3gwc a{ width:118px; background:#ff6600; height:28px; display:inline-block; color:#fff;}
+.abox_ddt_3gwc a:hover{ background:#0066ff;}
+

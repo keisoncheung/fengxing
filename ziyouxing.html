@@ -1,0 +1,562 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>风行旅游</title>
+<meta name="keywords" content="风行旅游">
+<meta name="description" content="风行旅游">
+<link type="text/css" rel="stylesheet" href="css/global.css" />
+<link type="text/css" rel="stylesheet" href="css/aozhou.css" />
+<script src="js/jquery.js"></script>
+</head>
+
+<body>
+<div class="toper">
+	<div class="top">
+   	  <div class="top1">
+        	<div class="top1left">专注澳大利亚、新西兰自由行，您的澳新旅游专家！</div>
+            <div class="top1right">  
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><a href="#">登录</a> |</td>
+                <td> <a href="#">注册</a> |</td>
+                <td> <a href="#">我的订单</a>&nbsp;&nbsp;</td>
+                <td width="18"><img src="images/gw.png" width="16" height="16" /></td>
+                <td> <a href="#" class="top_gw">购物车</a></td>
+                <td width="15"><img src="images/bz.png"  width="13" height="13" /></td>
+                <td> <a href="#" class="top_bz">帮助</a></td>
+              </tr>
+            </table>
+            </div>
+        </div>
+        <div class="top2">
+        	<div class="top2_logo"><a href="index.html"><img src="images/logo.png" height="108" /></a></div>
+            <div class="top2_ss">
+            	<div class="top2_ss_1">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td  valign="middle" width="374" height="40"><input class="top2_ss_1_t" type="text" value="" ></td>
+                    <td  valign="middle" width="69" height="40"><input class="top2_ss_1_b" type="submit" value="" ></td>
+                  </tr>
+                </table>
+                </div>
+                <div class="top2_ss_2">热门搜索：<a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a></div>
+            </div>
+            <div class="top2_dh">
+            	<img src="images/dh.png" width="170" height="55" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+ <script>
+ $(document).ready(function(){
+  $('.nav>li').mousemove(function(){
+	$(this).addClass('on');
+  $(this).find('dl').slideDown();//you can give it a speed
+  });
+  $('.nav>li').mouseleave(function(){
+	$(this).removeClass('on');
+  $(this).find('dl').slideUp("fast");
+  });
+  
+});
+ </script>
+	<div class="head">   
+    	<ul class="nav" id="nav">                                                                                                
+        	<li><a href="#">首页</a></li>
+        	<li><a href="aozhou.html">澳大利亚</a></li>
+        	<li><a href="aozhou.html">新西兰</a></li>
+        	<li><a href="#">私家定制</a></li>
+        	<li><a href="#">团队旅游</a></li>
+        	<li><a href="qianzheng_aozhou.html">签证</a>
+            <dl style="">
+<dd><a href="qianzheng_aozhou.html" title="澳大利亚">澳大利亚</a></dd>
+<dd><a href="qianzheng_aozhou2.html" title="新西兰">新西兰</a></dd>
+</dl>
+            </li>
+        	<li><a href="#">自由行套餐</a></li>
+        	<li><a href="#">酒店</a></li>
+        	<li><a href="#">租车</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="aozhoubox">
+	<div class="azbox1">
+        <a href="index.html">风行旅游网</a>><a href="aozhou.html">自由行套餐</a>
+    </div>
+    <div class="azbox2">
+    	<div class="azbox2list">
+        	<ul>
+            	<li><a href="#">全部</a></li>
+            	<li><a href="#">澳大利亚</a></li>
+                <li><a href="#" class="zaxz">新西兰</a></li>
+            	<li><a href="#">澳新</a></li>
+            </ul>
+        </div>
+        <div class="azbox2xuanx">
+        <script type="text/javascript">
+        $(function(){
+                $(".listIndex a").live("click",function(){
+                        var selectedShow = $(".hasBeenSelected").find("div");
+                        var textTypeIndex = $(this).parents("dl").index();//获取a当前的dl索引值
+                        var text = $(this).text();
+                        $(".listIndex:eq(" + textTypeIndex + ")").find("a").removeClass("selected");
+                        $(this).addClass("selected");
+                        selectedShow.eq(textTypeIndex).removeClass("none");
+                        selectedShow.eq(textTypeIndex).find("label").text(text);
+                        var show = $(".hasBeenSelected").find(".none").length;
+                        if(show < 5 ){
+                                $(".eliminateCriteria").show();
+                                }
+                        })
+                $(".selectedShow em").live("click",function(){
+                        $(this).parents(".selectedShow").addClass("none");
+                        var textTypeIndex = $(this).parents(".selectedShow").index();
+                        $(".listIndex:eq("+textTypeIndex+")").find("a").removeClass("selected");
+                        var show = $(".hasBeenSelected").find(".none").length;
+                        if(show > 4){
+                                $(".eliminateCriteria").hide();
+                                }
+                        })
+                $(".eliminateCriteria").live("click",function(){
+                        $(".hasBeenSelected").find("div").addClass("none");
+                        $(this).hide();
+                        $(".listIndex").find("a").removeClass("selected");
+                        })
+                })
+</script>
+
+        	<div class="azb2xx">
+                <dl class="listIndex">
+                    <dt class="azb2xx_left">出发城市：</dt>
+                    <dd class="phoneType azb2xx_right">
+                        <span><a href="javascript:void(0)" class="selected">全部</a></span>
+                        <span><a href="javascript:void(0)">悉尼</a></span>
+                        <span><a href="javascript:void(0)">墨尔本</a></span>
+                        <span><a href="javascript:void(0)">凯恩斯</a></span>
+                    </dd>
+                </dl>
+  <dl class="clearfix listIndex">
+             <dt class="azb2xx_left">返回地：</dt>
+        <dd class="azb2xx_right">
+                <span><a href="javascript:void(0)" class="selected">全部</a></span>
+                <span><a href="javascript:void(0)">悉尼</a></span>
+                <span><a href="javascript:void(0)">墨尔本</a></span>
+                <span><a href="javascript:void(0)">凯恩斯</a></span>
+        </dd>
+     </dl>
+     <dl class="clearfix listIndex">
+             <dt class="azb2xx_left">出发月份：</dt>
+        <dd class="azb2xx_right">
+                <span><a href="javascript:void(0)" class="selected">全部</a></span>
+            <span><a href="javascript:void(0)">明年1月份</a></span>
+            <span><a href="javascript:void(0)">明年2月份</a></span>
+            <span><a href="javascript:void(0)">明年3月份</a></span>
+        </dd>
+     </dl>
+  <dl class="clearfix listIndex">
+             <dt class="azb2xx_left">行程天数：</dt>
+        <dd class="azb2xx_right">
+                <span><a href="javascript:void(0)" class="selected">全部</a></span>
+            <span><a href="javascript:void(0)">8天</a></span>
+            <span><a href="javascript:void(0)">10天</a></span>
+            <span><a href="javascript:void(0)">11天</a></span>
+            <span><a href="javascript:void(0)">12天</a></span>
+        </dd>
+     </dl>
+                
+                
+            <!--    <dl class="clearfix hasBeenSelected">
+             <dt class="azb2xx_left">价格范围：</dt>
+        <dd class="azb2xx_right">
+                        <div class="selectedShow none">
+                        <label></label>
+                        <em></em>
+                        </div>
+                        <div class="selectedShow none">
+                        <label></label>
+                        <em></em>
+                        </div>
+                        <div class="selectedShow none">
+                        <label></label>
+                        <em></em>
+                        </div>
+                        <div class="selectedShow none">
+                        <label></label>
+                        <em></em>
+                        </div>
+                        <div class="selectedShow none">
+                        <label></label>
+                        <em></em>
+                        </div>
+                        <div class="eliminateCriteria none">清除筛选条件</div>
+                    </dd>
+                </dl>-->
+                
+            </div>
+        </div>
+    </div>
+    <div class="azbox3">
+    	<div class="azbox3_top">
+<div class="filter_nav clearfix">
+		<div class="sort fl"><a href="#" class="active">推荐<i class="sprint_img sort_down"></i></a><a href="#">销量</a><a href="#">点评数</a><a href="#">价格</a></div>
+		<div class="type fl">
+        <table width="260" border="0" cellspacing="0" cellpadding="0" class="kengy">
+  <tr>
+    <td>价格：价格区间</td>
+    <td><input type="text" class="jjqj" value="RMB"></td>
+    <td>-</td>
+    <td><input type="text" class="jjqj" value="RMB"></td>
+  </tr>
+</table>
+
+        </div>
+		<div class="fr clearfix">
+			<div class="fl">
+            <a href="javascript:;" class="enable page_btn">&lt;</a>
+            <span class="page_num">
+            <span class="now">1</span>
+            <span>/37</span>
+            </span>
+            <a href="#" class="page_btn">&gt;</a>
+            </div>
+            <!--
+			<div class="fl show_type">
+                <a href="aozhou.html" class=""><i class="sprint_img big_icon"></i>大图</a>
+                <a href="aozhou2.html" class="enable active"><i class="sprint_img lie_icon"></i>列表</a>
+            </div>
+            -->
+		</div>
+	</div>        </div>
+        <div class="azbox3_bot">
+        	<ul class="henglist">
+            	<li>
+                	<div class='henglistbox'>
+                    	<div class='henglistbox_left'>
+                        	<a href='#'><img src='images/azt.png' width='227' height='168' /></a>
+                        </div>
+                        <div class='henglistbox_cent'>
+                        	<div class='henglistbox_cent_1'><a href='aozhou_show.html'>艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class='henglistbox_cent_2' style='text-indent:0;'>
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class='henglistbox_cent_3'>
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class='henglistbox_righ'>
+                        	<div class='headlistbox_righ_1'>
+                            	RMB 650
+                            </div>
+                        	<div class='headlistbox_righ_2'>RMB 650</div>
+                        	<div class='headlistbox_righ_3'><a href='aozhou_show.html'>立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="henglistbox">
+                    	<div class="henglistbox_left">
+                        	<a href="#"><img src="images/azt.png" width="227" height="168" /></a>
+                        </div>
+                        <div class="henglistbox_cent">
+                        	<div class="henglistbox_cent_1"><a href="aozhou_show.html">艾尔利滩3晚套餐A (心形大堡礁+外堡礁浮潜+白天堂沙滩深度游）</a></div>
+                        	<div class="henglistbox_cent_2" style="text-indent:0;">
+                            出发城市：澳大利亚<br />结束城市：新西兰<br />出发团期:2015-01-25
+                            </div>
+                        	<div class="henglistbox_cent_3">
+                            已有1060人购买 | 5.0分      城市：惠森迪       行程天数：8天
+                            </div>
+                        </div>
+                        <div class="henglistbox_righ">
+                        	<div class="headlistbox_righ_1">
+                            	RMB 650
+                            </div>
+                        	<div class="headlistbox_righ_2">RMB 650</div>
+                        	<div class="headlistbox_righ_3"><a href="aozhou_show.html">立即购买</a></div>
+                        </div>
+                    </div>
+                </li>
+                
+            </ul>	
+        
+        
+        </div>
+        <div class="fenyebox">
+            <span class="num"><span>1</span><span>/1</span></span><a href="javascript:;" class="btn enable"><i class="sprint_img triangle_left"></i>上一页</a>
+            <a href="javascript:;" class="btn active">1</a>
+            <a href="javascript:;" class="btn enable">2</a>
+            <a href="javascript:;" class="btn enable">3</a>
+            ...
+            <a href="javascript:;" class="btn enable">7</a>
+            <a href="javascript:;" class="btn enable">下一页<i class="sprint_img triangle_right"></i></a>      
+        </div>
+    </div>
+</div>
+<div class="footer">
+	<div class="footbox">
+    	<div class="footbox1">
+        	<div class="footbox1_1">
+            	<div class="footbox1_1_list" style="padding-left:0px;">
+                	<div class="footbox1_1_list_top"><a href="#">关于我们</a></div>
+                    <ul class="footbox1_1_list_list">
+                    	<li><a href="#">公司简介</a></li>
+                    	<li><a href="#">联系我们</a></li>
+                    	<li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">  
+                	<div class="footbox1_1_list_top"><a href="#">帮助指南</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">预定流程</a></li>
+                    	<li><a href="#">常见问题</a></li>
+                    	<li><a href="#">支付指南</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">  
+                	<div class="footbox1_1_list_top"><a href="#">网站条款</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">用户协议</a></li>
+                    	<li><a href="#">隐私保护</a></li>
+                    	<li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list"> 
+                	<div class="footbox1_1_list_top"><a href="#">售后服务</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">投诉建议</a></li>
+                    	<li><a href="#">退换货说明</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">
+                	<div class="footbox1_1_list_top"><a href="#">手机版</a></div>
+                </div>
+            </div>
+        	<div class="footbox1_2">
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="50%"><img src="images/w1.png" width="143" height="106" /></td>
+                    <td width="50%"><img src="images/w2.png" width="146" height="106" /></td>
+                  </tr>
+                </table>
+
+            </div>
+        	<div class="footbox1_3">
+            	<img src="images/r.png" width="207" height="71" />
+            </div>
+        </div>
+        <div class="footbox2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="80"><strong style="font-size:14px;">客户合作：&nbsp;</strong></td>
+                <td width="86"><img src="images/y_01.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_03.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_05.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_07.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_09.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_11.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_13.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_15.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_17.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_19.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_21.png" width="76" height="36" /></td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+
+        
+      </div>
+        <div class="footbox3">
+为全球华人倾力打造的全中文澳大利亚、新西兰自助旅游平台！您出行澳洲新西兰的旅游专家网站<br>
+体验澳新风情，尽在金澳风行!<br>
+Copyright（C）2006-2014 ALL Rights Reserved  广东风行国际旅行社有限公司版权所有 许可证号：00201 粤ICP备11082266号-1
+        </div>
+    </div>
+</div>
+</body>
+</html>

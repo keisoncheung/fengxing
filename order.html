@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>风行旅游</title>
+<meta name="keywords" content="风行旅游">
+<meta name="description" content="风行旅游">
+<link type="text/css" rel="stylesheet" href="css/global.css" />
+<link type="text/css" rel="stylesheet" href="css/cart.css" />
+<link type="text/css" rel="stylesheet" href="css/member.css" />
+<script src="js/jquery.js"></script>
+<script src="js/qianzheng.js"></script>
+<style type="text/css">
+
+.place_tab {overflow: hidden;zoom: 1;width:1110px;background:#ffffff url(images/al_index_tab_bg.png) bottom repeat-x;margin: 0 0 10px 0px;}
+.place_tab a {padding-bottom: 12px;display: block;}
+.clearfix li {width: 16%;float: left;text-align: center;}
+.place_tab .current, .place_tab li:hover {border-bottom: 5px solid #06c;}
+.place_tab .current span, .place_tab li:hover span {color: #06c;}
+.place_tab a span {line-height: 20px;border-left: 1px solid #b8b8b8;display: block;text-align: center;font-size: 16px;color: #797979;font: 500 14px/1 microsoft yahei,hiragino sans gb,wenquanyi micro hei,sans-serif;}
+.al_agreement {border: 5px solid #f2f2f2;padding: 10px 25px 50px;margin-bottom: 50px;line-height: 28px;}
+.al_agreement h3 {font-size: 24px;font-weight: 500;padding: 15px 0;border-bottom: 1px solid #ccc;margin-bottom: 20px;}
+.al_mine .order_data_item {border: 1px solid #f0f0f0;margin-bottom: 30px;}
+.order_head {background-color: #f9f9f9;display: block; width:100%; height:auto; overflow:hidden; border-bottom:1px solid #d3d3d3;}
+.order_data table{width: 100%; }
+.order_head .btn_orange {float: right;width: 60px;height: 28px;line-height: 28px;margin: 6px 30px 6px 0;clear: both;}
+.btn_orange:hover {background-color: #fa7b00;text-decoration: none; color:#ffffff;}
+.btn_orange {background-color: #ff9600;}
+.btn_grey, .btn_blue, .btn_green, .btn_orange {display: block;color: #fff;text-align: center;}
+.order_head h4 {float: left;font-size: 14px;margin-bottom: 0;line-height: 40px;padding-left: 10px;}
+.order_head h4 em {color: #f90;}
+.order_data{ border:1px solid #d3d3d3;}
+.order_data th{line-height: 39px;font-weight: bold;}
+.order_data .t3 {width: 220px;padding: 0 10px;text-align: left;}
+.order_data .t4 {width: 120px;text-align:center;}
+.order_data .t5 {width: 130px;text-align: left;}
+.order_data .t6 {width: 85px;}
+.order_data .t7 {width: 85px;text-align:center;}
+.order_data .t8 {width: 140px;}
+.order_data .t9{width:90px;text-align:center;}
+.order_data .t9 .btn_green{margin-top:45px}
+.order_data .t10{width:100px}
+</style>
+</head>
+
+<body>
+<div class="toper">
+	<div class="top">
+   	  <div class="top1">
+        	<div class="top1left">专注澳大利亚、新西兰自由行，您的澳新旅游专家！</div>
+            <div class="top1right">  
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><a href="#">登录</a> |</td>
+                <td> <a href="#">注册</a> |</td>
+                <td> <a href="#">我的订单</a>&nbsp;&nbsp;</td>
+                <td width="18"><img src="images/gw.png" width="16" height="16" /></td>
+                <td> <a href="#" class="top_gw">购物车</a></td>
+                <td width="15"><img src="images/bz.png"  width="13" height="13" /></td>
+                <td> <a href="#" class="top_bz">帮助</a></td>
+              </tr>
+            </table>
+            </div>
+        </div>
+        <div class="top2">
+        	<div class="top2_logo"><a href="index.html"><img src="images/logo.png" height="108" /></a></div>
+            <div class="top2_ss">
+            	<div class="top2_ss_1">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td  valign="middle" width="374" height="40"><input class="top2_ss_1_t" type="text" value="" ></td>
+                    <td  valign="middle" width="69" height="40"><input class="top2_ss_1_b" type="submit" value="" ></td>
+                  </tr>
+                </table>
+                </div>
+                <div class="top2_ss_2">热门搜索：<a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a></div>
+            </div>
+            <div class="top2_dh">
+            	<img src="images/dh.png" width="170" height="55" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+ <script>
+ $(document).ready(function(){
+  $('.nav>li').mousemove(function(){
+	$(this).addClass('on');
+  $(this).find('dl').slideDown();//you can give it a speed
+  });
+  $('.nav>li').mouseleave(function(){
+	$(this).removeClass('on');
+  $(this).find('dl').slideUp("fast");
+  });
+  
+});
+ </script>
+	<div class="head">   
+    	<ul class="nav" id="nav">                                                                                                
+        	<li><a href="#">首页</a></li>
+        	<li><a href="aozhou.html">澳大利亚</a></li>
+        	<li><a href="aozhou.html">新西兰</a></li>
+        	<li><a href="#">私家定制</a></li>
+        	<li><a href="#">团队旅游</a></li>
+        	<li><a href="qianzheng_aozhou.html">签证</a>
+            <dl style="">
+<dd><a href="qianzheng_aozhou.html" title="澳大利亚">澳大利亚</a></dd>
+<dd><a href="qianzheng_aozhou2.html" title="新西兰">新西兰</a></dd>
+</dl>
+            </li>
+        	<li><a href="#">自由行套餐</a></li>
+        	<li><a href="#">酒店</a></li>
+        	<li><a href="#">租车</a></li>
+        </ul>
+    </div>
+</div>
+<!--------------------------------------------------------->
+<div class="cartbox">
+    <div class="cartcarb"></div>
+    <div class="cart_item">
+        <!-- -->
+        <div class="place_tab">
+            <ul class="clearfix">
+                <li class="current">
+                    <a href="" class="first">
+                        <span style="border:0px;">我的订单</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <!-- -->
+        <div class="order_data order_data_item">
+				<div class="order_head clearfix">
+					<a class="btn_orange" target="_blank" href="">付款</a> 			
+						<h4>订单号 200021247&nbsp;&nbsp;&nbsp;&nbsp;预订时间：2015-02-07&nbsp;&nbsp;&nbsp;&nbsp;总金额：
+							<em><span>RMB</span>&nbsp;<span>540.0</span></em>
+					        &nbsp;&nbsp;&nbsp;&nbsp;已付金额：
+					        <em><span>RMB</span>&nbsp;<span>0.0</span></em>
+					        
+					         &nbsp;&nbsp;&nbsp;&nbsp;还需支付金额：
+					        <em><span>RMB</span>&nbsp;<span>540.0</span></em>
+						</h4>
+				</div>
+				<table width="1110">
+					<tbody>
+						<tr>
+							<th class="t3">产品名称</th>
+							<th class="t4">旅游日期</th>
+							<th class="t5">规格/项目名称</th>
+							<th class="t6">预订数量</th>
+							<th class="t7">金额</th>
+							<th class="t8">补充信息</th>
+							<th class="t9">订单状态</th>
+							<th class="t10">订单操作</th>
+						</tr>
+						<tr data-itemid="" data-orderid="">
+							<td class="t3"><a href="/p" target="_blank">大洋路一日游（奥特威角灯塔+十二门徒）音频或纸质中文讲解</a></td>
+							<td class="t4">2015-02-10</td>
+							<td class="t5">
+								<ul>
+                                <li>11</li>
+                                  <li>22</li>
+
+                                </ul>
+							</td>
+							<td class="t6">
+								<ul>
+                                 <li>11</li>
+                                  <li>22</li></ul>
+							</td>
+							<td class="t7">
+								<span>AUD</span> <span>108.0</span>
+							</td>
+							<td class="t8">
+								<!--<a class="btn_green" href="javascript:;">详细&gt;</a>-->
+							</td>
+							<td class="t9">
+								<p>待处理</p>
+								<!--<a class="btn_green" href="javascript:;">详细&gt;</a>-->
+							</td>
+							<td class="t10">
+								<!-- <a class="btn_grey" href="javascript:;">修改</a>-->
+								</td>
+						</tr>
+						</tbody>
+				</table>
+			</div>
+        
+        
+        <!-- -->
+    </div>
+</div>        
+<!--------------------------------------------------->
+<div class="footer">
+	<div class="footbox">
+    	<div class="footbox1">
+        	<div class="footbox1_1">
+            	<div class="footbox1_1_list" style="padding-left:0px;">
+                	<div class="footbox1_1_list_top"><a href="#">关于我们</a></div>
+                    <ul class="footbox1_1_list_list">
+                    	<li><a href="#">公司简介</a></li>
+                    	<li><a href="#">联系我们</a></li>
+                    	<li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">  
+                	<div class="footbox1_1_list_top"><a href="#">帮助指南</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">预定流程</a></li>
+                    	<li><a href="#">常见问题</a></li>
+                    	<li><a href="#">支付指南</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">  
+                	<div class="footbox1_1_list_top"><a href="#">网站条款</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">用户协议</a></li>
+                    	<li><a href="#">隐私保护</a></li>
+                    	<li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list"> 
+                	<div class="footbox1_1_list_top"><a href="#">售后服务</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">投诉建议</a></li>
+                    	<li><a href="#">退换货说明</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">
+                	<div class="footbox1_1_list_top"><a href="#">手机版</a></div>
+                </div>
+            </div>
+        	<div class="footbox1_2">
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="50%"><img src="images/w1.png" width="143" height="106" /></td>
+                    <td width="50%"><img src="images/w2.png" width="146" height="106" /></td>
+                  </tr>
+                </table>
+
+            </div>
+        	<div class="footbox1_3">
+            	<img src="images/r.png" width="207" height="71" />
+            </div>
+        </div>
+        <div class="footbox2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="80"><strong style="font-size:14px;">客户合作：&nbsp;</strong></td>
+                <td width="86"><img src="images/y_01.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_03.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_05.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_07.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_09.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_11.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_13.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_15.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_17.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_19.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_21.png" width="76" height="36" /></td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+
+        
+      </div>
+        <div class="footbox3">
+为全球华人倾力打造的全中文澳大利亚、新西兰自助旅游平台！您出行澳洲新西兰的旅游专家网站<br>
+体验澳新风情，尽在金澳风行!<br>
+Copyright（C）2006-2014 ALL Rights Reserved  广东风行国际旅行社有限公司版权所有 许可证号：00201 粤ICP备11082266号-1
+        </div>
+    </div>
+</div>
+</body>
+</html>

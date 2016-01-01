@@ -1,0 +1,321 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Text;
+using DLL;
+
+public partial class manager_caseshow : System.Web.UI.Page
+{
+    System.Drawing.Image.GetThumbnailImageAbort callb = null;
+    System.Drawing.Image image, newimage;
+    public string imagename1, newName, newNamed, newName2, newName3, newName4;
+    public string pic2;
+    private string id;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Request["id"] != null)
+        {
+            id = Request["id"].ToString();
+        }
+        else
+        {
+            pic2 = "<img src=../pic/nopic.jpg width='130px'>";
+        }
+        if (!IsPostBack)
+        {
+            if (Request["id"] != null)
+            {
+                id = Request["id"].ToString();
+                cstype();
+                csh();
+            }
+            else
+            {
+                cstype();
+            }
+        }
+    }
+
+
+
+
+    //上传图片
+    private int shang()
+    {
+        Random rn = new Random();
+        int n = 0;
+        n = rn.Next(1000, 9999);
+        return n;
+    }
+
+    private string upfile(HtmlInputFile file)
+    {
+        string mPath;
+        if ("" != file.PostedFile.FileName)
+        {
+            string imagePath = file.PostedFile.FileName;
+            string imageType = imagePath.Substring(imagePath.LastIndexOf(".") + 1);
+            string imageName = imagePath.Substring(imagePath.LastIndexOf("\\") + 1);
+            imagename1 = DateTime.Now.ToString("yyyyMMddhhmmss") + shang() + "." + imageType;
+            if ("jpg" != imageType && "gif" != imageType && "JPG" != imageType && "GIF" != imageType)
+            {
+                Response.Write("<script language='javascript'> alert('对不起！请您选择jpg或者gif格式的图片！');</script>");
+                return "";
+            }
+            else
+            {
+                try
+                {
+                    mPath = Server.MapPath("~") + "\\pic\\";
+                    file.PostedFile.SaveAs(mPath + "\\" + imagename1);
+                    //image = System.Drawing.Image.FromFile(mPath + "\\" + imagename1);
+                    //int width = image.Width;
+                    //int swidth = 230;
+                    //int height = image.Height;
+                    //int sheight = 157;
+                    //newimage = image.GetThumbnailImage(swidth, sheight, callb, new System.IntPtr());
+                    //newimage.Save(mPath + "\\s" + imagename1, image.RawFormat);//图片名字－－s+name.jpg
+                    //image.Dispose();
+                    //newimage.Dispose();
+                    //newNamed = imagename1;
+                    return imagename1;
+                }
+                catch (Exception ee)
+                {
+                    ee.ToString();
+                    return "";
+
+                }
+            }
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+
+    private string simage(string file)
+    {
+        int wid = 131;
+        int hei = 98;
+        if (ddl1.SelectedValue == "26")
+        {
+            wid = 150;
+            hei = 113;
+        }
+
+        try
+        {
+            string mPath = Server.MapPath("~") + "\\pic\\";
+            //image = System.Drawing.Image.FromFile(mPath + "\\" + file);
+            //int width = image.Width;
+            //int swidth = 230;
+            //int height = image.Height;
+            //int sheight = 157;
+            //newimage = image.GetThumbnailImage(swidth, sheight, callb, new System.IntPtr());
+            ImageThumbnail.MakeThumbnail(mPath + "\\" + file, mPath + "\\s" + file, wid, hei, "H", System.Drawing.Imaging.ImageFormat.Jpeg);
+            //newimage.Save(mPath + "\\s" + file, image.RawFormat);//图片名字－－s+name.jpg
+            //image.Dispose();
+            //newimage.Dispose();
+            //newNamed = file;
+            newName = "s" + file;
+            return newName;
+        }
+        catch (Exception ee)
+        {
+            ee.ToString();
+            return "";
+
+        }
+    }
+
+    //初始化类别
+    private void cstype()
+    {
+        string artbtype = null;
+        //if (Request["id"] != null)
+        //{
+        //    artbtype = "where id in(select ParId from News where id=" + Request["id"] + ")";
+        //}
+
+        //else if (Request["type"] != null)
+        //{
+        //    artbtype = "where id=" + Request["type"] + "";
+
+        //}
+        //else
+        //{
+        //    artbtype = "";
+        //}
+        DataTable dt = new DataTable();
+        dt = OleDbHelper.ExecuteDataSet(OleDbHelper.Conn,"select id, clsname from languageId",null).Tables[0];
+        rbl.DataSource = dt;
+        rbl.DataTextField = "clsname";
+        rbl.DataValueField = "id";
+        rbl.DataBind();
+        rbl.Items[0].Selected = true;
+
+        string sql = "select id,title from news where parid=42";
+        artbtype = OleDbHelper.ExecuteDataSet(OleDbHelper.Conn,sql,null).ToString();
+        ddl1.DataSource = osdData.DataSet(sql);
+        ddl1.DataTextField = "title";
+        ddl1.DataValueField = "ID";
+        ddl1.DataBind();
+    }
+
+    //修改页面
+    public void csh()
+    {
+        string str = null;
+        string sql = "select Id,ParId,languageId from case_img where ID=" + id;
+        try
+        {
+            DataTable dt = OleDbHelper.ExecuteDataSet(OleDbHelper.Conn, sql, null).Tables[0];
+            foreach (DataRow or in dt.Select())
+            {
+                rbl.SelectedValue = Convert.ToString(or["languageId"]);
+                ddl1.SelectedValue = Convert.ToString(or["parid"]);
+            }
+        }
+        catch (Exception rr)
+        {
+            rr.ToString();
+        }
+    }
+
+    //返回bool类型
+    public bool Igs(string sql)
+    {
+        bool b = false;
+        try
+        {
+            OleDbHelper.ExecuteNonQuery(OleDbHelper.Conn,sql,null);
+            b = true;
+        }
+        catch (Exception ee)
+        {
+            ee.ToString();
+            b = false;
+        }
+        return b;
+    }
+
+
+    protected void Submit1_ServerClick(object sender, EventArgs e)
+    {
+        string sql = null;
+        string bpic = upfile(File1);
+        string spic = "";
+
+
+        if (ddl1.SelectedValue != "0")
+        {
+            if (bpic.Length > 1)
+            {
+                spic = simage(bpic);
+
+                if (Request["id"] != null)
+                {
+                    sql = "update case_img set ParId ='" + ddl1.SelectedValue + "',picb='" + bpic + "',pics='" + spic + "',createtime='"+DateTime.Now.ToString()+"' where ID=" + Request["id"].ToString() + "";
+
+                    //string leib = null;
+                    //osdReader or = new osdReader("select parId from news where id=" + Request["id"] + "");
+                    //while (or.Read())
+                    //{
+                    //    leib = Convert.ToString(or["ParId"]);
+                    //}
+                    //or.Close();
+                    if (Igs(sql))
+                    {
+                        Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"修改成功！\");location.href=\"./caselist.aspx?type=" + ddl1.SelectedValue + "&lan=" + rbl.SelectedValue + "&ac=新闻管理咨询\";</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"修改失败！\");</script>");
+                    }
+                }
+                else
+                {
+                    sql = "insert into case_img(parid,picb,pics,createtime,languageid) values('" + ddl1.SelectedValue + "','" + bpic + "','" + spic + "','" + DateTime.Now.ToString() + "','" + rbl.SelectedValue + "')";
+
+                    if (Igs(sql))
+                    {
+                        Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"添加成功！\");location.href=\"./caselist.aspx?type=" + ddl1.SelectedValue + "&lan=" + rbl.SelectedValue + "&ac=新闻管理咨询\";</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"添加失败！\");</script>");
+
+                    }
+                }
+            }
+            else
+            {
+                if (Request["id"] != null)
+                {
+                    sql = "update case_img set  ParId ='" + ddl1.SelectedValue + "' where ID=" + Request["id"].ToString() + "";
+
+                    //string leib = null;
+                    //osdReader or = new osdReader("select parId from news where id=" + Request["id"] + "");
+                    //while (or.Read())
+                    //{
+                    //    leib = Convert.ToString(or["ParId"]);
+                    //}
+                    //or.Close();
+                    if (Igs(sql))
+                    {
+                        Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"修改成功！\");location.href=\"./caselist.aspx?type=" + ddl1.SelectedValue + "&lan=" + rbl.SelectedValue + "&ac=新闻管理咨询\";</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"修改失败！\");</script>");
+                    }
+                }
+                else
+                {
+                    sql = "insert into case_img(parid,picb,pics,createtime,languageid) values('" + ddl1.SelectedValue + "','nopic.jpg','nopic.jpg','" + DateTime.Now.ToString() + "','" + rbl.SelectedValue + "')";
+
+                    if (Igs(sql))
+                    {
+                        Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"添加成功！\");location.href=\"./caselist.aspx?type=" + ddl1.SelectedValue + "&lan=" + rbl.SelectedValue + "&ac=新闻管理咨询\";</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"添加失败！\");</script>");
+
+                    }
+                }
+
+            }
+        }
+        else
+        {
+            Response.Write("<script LANGUAGE=\"JavaScript\">alert(\"请选择类别！\");</script>");
+
+        }
+    }
+    protected void ddl1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        if (Request["id"] != null)
+        {
+            Response.Redirect("caselist.aspx?lan=" + rbl.SelectedValue + "&type=" + ddl1.SelectedValue + "");
+        }
+        else
+        {
+            Response.Redirect("caselist.aspx");
+        }
+
+    }
+}

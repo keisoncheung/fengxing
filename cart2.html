@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>风行旅游</title>
+<meta name="keywords" content="风行旅游">
+<meta name="description" content="风行旅游">
+<link type="text/css" rel="stylesheet" href="css/global.css" />
+<link type="text/css" rel="stylesheet" href="css/cart.css" />
+<script src="js/jquery.js"></script>
+<script src="js/qianzheng.js"></script>
+</head>
+
+<body>
+<div class="toper">
+	<div class="top">
+   	  <div class="top1">
+        	<div class="top1left">专注澳大利亚、新西兰自由行，您的澳新旅游专家！</div>
+            <div class="top1right">  
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><a href="#">登录</a> |</td>
+                <td> <a href="#">注册</a> |</td>
+                <td> <a href="#">我的订单</a>&nbsp;&nbsp;</td>
+                <td width="18"><img src="images/gw.png" width="16" height="16" /></td>
+                <td> <a href="#" class="top_gw">购物车</a></td>
+                <td width="15"><img src="images/bz.png"  width="13" height="13" /></td>
+                <td> <a href="#" class="top_bz">帮助</a></td>
+              </tr>
+            </table>
+            </div>
+        </div>
+        <div class="top2">
+        	<div class="top2_logo"><a href="index.html"><img src="images/logo.png" height="108" /></a></div>
+            <div class="top2_ss">
+            	<div class="top2_ss_1">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td  valign="middle" width="374" height="40"><input class="top2_ss_1_t" type="text" value="" ></td>
+                    <td  valign="middle" width="69" height="40"><input class="top2_ss_1_b" type="submit" value="" ></td>
+                  </tr>
+                </table>
+                </div>
+                <div class="top2_ss_2">热门搜索：<a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a> <a href="#">澳大利亚</a> <a href="#">新西兰</a></div>
+            </div>
+            <div class="top2_dh">
+            	<img src="images/dh.png" width="170" height="55" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+ <script>
+ $(document).ready(function(){
+  $('.nav>li').mousemove(function(){
+	$(this).addClass('on');
+  $(this).find('dl').slideDown();//you can give it a speed
+  });
+  $('.nav>li').mouseleave(function(){
+	$(this).removeClass('on');
+  $(this).find('dl').slideUp("fast");
+  });
+  
+});
+ </script>
+	<div class="head">   
+    	<ul class="nav" id="nav">                                                                                                
+        	<li><a href="#">首页</a></li>
+        	<li><a href="aozhou.html">澳大利亚</a></li>
+        	<li><a href="aozhou.html">新西兰</a></li>
+        	<li><a href="#">私家定制</a></li>
+        	<li><a href="#">团队旅游</a></li>
+        	<li><a href="qianzheng_aozhou.html">签证</a>
+            <dl style="">
+<dd><a href="qianzheng_aozhou.html" title="澳大利亚">澳大利亚</a></dd>
+<dd><a href="qianzheng_aozhou2.html" title="新西兰">新西兰</a></dd>
+</dl>
+            </li>
+        	<li><a href="#">自由行套餐</a></li>
+        	<li><a href="#">酒店</a></li>
+        	<li><a href="#">租车</a></li>
+        </ul>
+    </div>
+</div>
+<div class="cartbox">
+<div class="cartcarb">
+<div class="cart_step">
+		<div class="left_round"></div>
+		<div class="center_bar">
+			<div class="step1 "> <strong>1</strong>
+				<span style="text-align:center">购物车</span>
+			</div>
+			<div class="step2 current"> <strong>2</strong>
+				<span style="text-align:center">提交订单</span>
+			</div>
+			<div class="step3">
+				<strong>3</strong>
+				<span style="text-align:center">支付</span>
+			</div>
+		</div>
+		<div class="right_round"></div>
+	</div>
+</div>
+
+<div class="cart_check">
+            <div data-type="contact">
+                <h4>
+                    联系人信息
+                    <span>
+                        您在网站注册的 email 将用于接收电子票。个别用户的邮件系统会将电子票误作为垃圾邮件，如果连续多天未收到电子票，请注意检查垃圾箱。
+                    </span>
+                </h4>
+                <div class="cart_item">
+                    <dl class="cart_contact">
+                        <dt>
+                            联系人（需成人）姓名<span>请与护照保持一致，姓名请填写英文名。</span>
+                            <!--<a href="javascript:;">护照姓名图解</a>-->
+                        </dt>
+                        <dd>
+                            <div>
+                                <div class="mod_ipt">
+                                    <label for=""><font color="red">*</font>英文姓：</label>
+                                    <input type="text" class="ipt_small" data-cellname="familyNameEn" value="zhang">
+                                </div>
+                                <div class="mod_ipt">
+                                    <label for=""><font color="red">*</font>英文名：</label>
+                                    <input type="text" class="ipt_small" data-cellname="givenNameEn" value="feilong">
+                                </div>
+                                <div class="mod_ipt">
+                                    <label for="">中文姓：</label>
+                                    <input type="text" class="ipt_small" data-cellname="familyNameZh" value="张">
+                                </div>
+                                <div class="mod_ipt">
+                                    <label for="">中文名：</label>
+                                    <input type="text" class="ipt_small" data-cellname="givenNameZh" value="非笼">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mod_ipt">
+                                    <label for=""><font color="red">*</font>联系邮箱：</label>
+                                    <input type="text" class="ipt_medium" data-cellname="recvEmail" value="465373178@qq.com">&nbsp;(重要，用于接收电子票)
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mod_ipt">
+                                    <label for=""><font color="red">*</font>手机号码(含国家代码):</label>
+                                    <input type="text" class="ipt_medium" data-cellname="localPhoneNo" value="+8613712345678">
+                                    <p>(此电话将用于行前预定相关事宜的紧急联系)</p>
+                                </div>
+                                <div class="mod_ipt">
+                                    <label for="">旅途电话(含国家代码):</label>
+                                    <input type="text" class="ipt_medium" data-cellname="foreignPhoneNo" value="+8613712345678">
+                                    <p>(此电话将用于旅途行进中的紧急联系；没有则不填)</p>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div data-type="cart_list">
+                <h4 id="productListH4">产品预定清单</h4>
+    
+        <div class="cart_item" data-itemid="1421636863">
+            <div class="item_title">
+                <h3>
+                    <a href="/p3066" target="_blank">大洋路一日游（奥特威角灯塔+十二门徒）音频或纸质中文讲解</a>
+                </h3>
+                <div class="item_btn">
+                    <a href="javascript:;" class="btn_grey" data-op="remove">取消</a>
+					
+                        <a href="javascript:;" class="btn_grey" data-op="update">修改</a>
+                    
+                </div>
+            </div>
+            <div class="item_details">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td width="105">
+                                <strong>旅游日期</strong>
+                            </td>
+                            <td width="400">2015年1月25日</td>
+
+                            <td>
+                                <strong>费用小计：</strong>
+                                <em id="cartItemShowMoneyEm_1421636863" class="showMoney" cny="538.2"><span class="showSymbol"></span> <span class="showPrice">103.50</span></em>
+                            </td>
+                        </tr>
+						
+                        
+                        
+                            
+                            <tr>
+                                
+                                    <td rowspan="1">
+                                        <strong>预定规格</strong>
+                                    </td>
+                                
+                                <td>经典游-成人</td>
+                                <td>1</td>
+                            </tr>
+                        
+                        
+
+                        
+
+                        
+
+                        
+
+                        
+                            
+                            <tr>
+                                
+                                    <td rowspan="1">
+                                        <strong>补充信息</strong>
+                                    </td>
+                                
+                                <td colspan="3">是否需要Ipod:&nbsp;&nbsp;不需要</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+                
+                <dl class="traveller_info" data-configid="1803" data-configtype="generic">
+                    <dt>接送酒店英文名</dt>
+                    
+
+                    
+
+                    
+                        <dd style="margin-left: 25px">
+                            <textarea name="" id="" cols="60" rows="2"></textarea>
+                        </dd>
+                    
+                </dl>
+            
+        </div>
+
+                
+            </div>
+            
+            <div data-type="user_tips">
+                <h4>订单备注：</h4>
+                <textarea id="userTips" rows="5s" cols="80" name="" maxlength="500" placeholder="选填：为了我们更好的了解您的需求，请在此留言说明您希望获取的信息，包括：订单相关细节，酒店延住选择，房间安排或者其他您需要我们知道, 并有助于您行程安排的咨询。您提出的特殊需求我们都会尽量满足，但不排除因客观条件限制而未能达到您预期。"></textarea>
+            </div>
+            
+            <div class="total_num" data-exchange="{17=4.7, 16=2.0, 9=5.2, 10=4.8, 11=3.2, 12=1.0, 13=6.2, 14=0.2, 15=5.3E-4}" data-discount="100" selectcurrencyid="">
+            <p class="activity_discount" style="display: none;"><span style="font-size:16px;font-weight:bold;color:#000000;margin-left:0;">订单享受立减活动优惠，减</span><span class="activity_discount_price" style="margin-left:0;"></span></p>
+            
+              <strong>
+               
+                        	应付金额
+                   </strong>
+              
+              
+	<span><em class="showMoney" precision="2" cny="676.2"><label class="showSymbol">RMB</label> <label class="showPrice">676.20</label></em></span>
+<p id="feeTip"></p>
+            </div>
+            <div class="cart_ensure">
+                <div class="btn_grey">
+                    <input type="checkbox" id="chk1" checked="">
+                    <a target="_blank" href="/static/agreement" style="color: #fff">同意风行网预订协议 </a>
+                </div>
+                <a href="javascript:;" class="btn_blue" id="confirmBookBtn">提交订单</a>
+            </div>
+        </div>
+                
+</div>
+<div class="footer">
+	<div class="footbox">
+    	<div class="footbox1">
+        	<div class="footbox1_1">
+            	<div class="footbox1_1_list" style="padding-left:0px;">
+                	<div class="footbox1_1_list_top"><a href="#">关于我们</a></div>
+                    <ul class="footbox1_1_list_list">
+                    	<li><a href="#">公司简介</a></li>
+                    	<li><a href="#">联系我们</a></li>
+                    	<li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">  
+                	<div class="footbox1_1_list_top"><a href="#">帮助指南</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">预定流程</a></li>
+                    	<li><a href="#">常见问题</a></li>
+                    	<li><a href="#">支付指南</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">  
+                	<div class="footbox1_1_list_top"><a href="#">网站条款</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">用户协议</a></li>
+                    	<li><a href="#">隐私保护</a></li>
+                    	<li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list"> 
+                	<div class="footbox1_1_list_top"><a href="#">售后服务</a></div>
+                    <ul class="footbox1_1_list_list">  
+                    	<li><a href="#">投诉建议</a></li>
+                    	<li><a href="#">退换货说明</a></li>
+                    </ul>
+                </div>
+            	<div class="footbox1_1_list">
+                	<div class="footbox1_1_list_top"><a href="#">手机版</a></div>
+                </div>
+            </div>
+        	<div class="footbox1_2">
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="50%"><img src="images/w1.png" width="143" height="106" /></td>
+                    <td width="50%"><img src="images/w2.png" width="146" height="106" /></td>
+                  </tr>
+                </table>
+
+            </div>
+        	<div class="footbox1_3">
+            	<img src="images/r.png" width="207" height="71" />
+            </div>
+        </div>
+        <div class="footbox2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="80"><strong style="font-size:14px;">客户合作：&nbsp;</strong></td>
+                <td width="86"><img src="images/y_01.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_03.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_05.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_07.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_09.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_11.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_13.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_15.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_17.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_19.png" width="76" height="36" /></td>
+                <td width="86"><img src="images/y_21.png" width="76" height="36" /></td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+
+        
+      </div>
+        <div class="footbox3">
+为全球华人倾力打造的全中文澳大利亚、新西兰自助旅游平台！您出行澳洲新西兰的旅游专家网站<br>
+体验澳新风情，尽在金澳风行!<br>
+Copyright（C）2006-2014 ALL Rights Reserved  广东风行国际旅行社有限公司版权所有 许可证号：00201 粤ICP备11082266号-1
+        </div>
+    </div>
+</div>
+</body>
+</html>

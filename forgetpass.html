@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>风行旅游</title>
+<meta name="keywords" content="风行旅游">
+<meta name="description" content="风行旅游">
+<link type="text/css" rel="stylesheet" href="css/global.css" />
+<link type="text/css" rel="stylesheet" href="css/aozhou.css" />
+<link rel="stylesheet" type="text/css" href="css/member.css">
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/show/jquery-1.10.2.min.js"></script>
+
+</head>
+
+<body>
+<div class="el_toper">
+	<div class="top">
+   	  	<div style="width: 100%;height:2px;overflow: hidden;"></div>
+        <div class="top2">
+        	<div class="top2_logo"><a href="index.html"><img src="images/logo.png" height="108" /></a></div>
+            <div class="top2_ss">
+            </div>
+            <div class="top2_dh">
+            	<img src="images/dh.png" width="170" height="55" />
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------------------------------->
+<div>
+<div class="dengluwrap">
+		<div class="wrap clearfix">
+			<div class="show">
+				<img alt="login" src="images/20130916015244-863.jpg">
+            </div>
+			<div class="operate findpwd">
+                <h3>找回密码</h3>
+                <ul>
+                    <li>
+                        <label for="username">账户名</label>
+                        <input style="ime-mode:disabled" type="text" id="username" class="mod_ipt" placeholder="邮箱">
+                        <p id="unt" class="tips"></p>
+                    </li>
+                    <li>
+                        <label for="confirm">验证方式</label>
+                        <select name="" id="confirm" class="mod_select">
+                            <option value="">邮箱</option>
+                        </select>
+                     </li>
+                </ul>
+                <form id="findpwdForm" action="/main/findpwd" method="post" style="display:none">
+                    <input type="text" name="email" id="em" value="">
+                </form>
+                <a href="javascript:;" class="btn_blue" onclick="findpwd();">发 送 邮 件</a>
+                
+            </div>
+            
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</div>
+<!---------------------------------------------->
+<div class="footer" style="background-color:#ffffff;">
+<div style="width:100%; height:auto; overflow:hidden;padding-top: 20px;line-height: 20px;border-top: 1px solid #bcbcbc;color: #808080;text-align:center;">
+Copyright（C）2006-2014 ALL Rights Reserved  广东风行国际旅行社有限公司版权所有 许可证号：00201 粤ICP备11082266号-1
+</div>
+</div>
+	
+</body>
+</html>
